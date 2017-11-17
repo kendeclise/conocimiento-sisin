@@ -17,6 +17,9 @@ import javaclient3.PlayerException;
 import javaclient3.Position2DInterface;
 import javaclient3.RangerInterface;
 import javaclient3.structures.PlayerConstants;
+import javaclient3.structures.PlayerPose2d;
+import javaclient3.structures.position1d.PlayerPosition1dCmdPos;
+import javaclient3.structures.position2d.PlayerPosition2dCmdPos;
 import views.GeneratorView;
 
 public class Movement {
@@ -58,8 +61,21 @@ public class Movement {
 			robot = new PlayerClient(servidor, puerto);
 			posi = robot.requestInterfacePosition2D(0, PlayerConstants.PLAYER_OPEN_MODE);
 			ranger = robot.requestInterfaceRanger(indexRadar, PlayerConstants.PLAYER_OPEN_MODE);
+			
+			PlayerPose2d position = new PlayerPose2d(6, 6, 5000);		
+			PlayerPosition2dCmdPos pst = new PlayerPosition2dCmdPos();
+			pst.setPos(position);
+			pst.setVel(position);
+			posi.setPosition(pst);
+			
+			
+			
 			ranger.setRangerPower(1);
 			posi.setMotorPower(1);
+			
+			
+			
+			
 
 			switch (ranger.getDeviceAddress().getIndex()) {
 			case 0:
@@ -77,8 +93,8 @@ public class Movement {
 			robot.runThreaded(-1, -1);
 
 		} catch (PlayerException e) {
-			// e.printStackTrace();
-			System.err.println(e.toString());
+			e.printStackTrace();
+			//System.err.println(e.toString());
 			System.exit(1);
 		}
 	}
@@ -135,7 +151,7 @@ public class Movement {
 		posi.setSpeed(speed, turnrate);
 
 		try {
-			Thread.sleep(50);
+			Thread.sleep(300);
 		} catch (Exception e) {
 		}
 
@@ -176,7 +192,7 @@ public class Movement {
         		vistaGenerator.getTxtConsola().append("\n\t    "+  speedString+"\t\t|\t      "+turnRateString);
 
         		try {
-        			Thread.sleep(50);
+        			Thread.sleep(300);
         		} catch (Exception e) {
         		}
 

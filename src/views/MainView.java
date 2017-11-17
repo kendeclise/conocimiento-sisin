@@ -230,7 +230,7 @@ public class MainView extends JFrame {
 		
 		btnEncender.setEnabled(false);
 		btnApagar.setEnabled(true);
-		
+		btnVolver.setEnabled(false);
 	}
 
 	public void desactivar() {
@@ -241,5 +241,6 @@ public class MainView extends JFrame {
 		
 		btnEncender.setEnabled(true);
 		btnApagar.setEnabled(false);
+		btnVolver.setEnabled(true);
 	}
 }

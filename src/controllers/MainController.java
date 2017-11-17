@@ -112,7 +112,10 @@ public class MainController {
 
 		// Asignando las teclas direccionales a la vista
 		mainView.getContentPane().addKeyListener(accionTeclasDireccionales());
-
+		mainView.getCmbRadar().addKeyListener(accionTeclasDireccionales());
+		mainView.getChckbxGuardarRuta().addKeyListener(accionTeclasDireccionales());
+	
+		
 		// Desactivar al iniciar el panelControl
 		mainView.desactivar();
 		controlEncendido = false;
@@ -301,12 +304,7 @@ public class MainController {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-
+				
 				if (controlEncendido) {
 					if (KeyEvent.VK_UP == e.getKeyCode()) {
 						movement.movimiento("AVANZAR");
@@ -322,6 +320,27 @@ public class MainController {
 					}
 
 				}
+
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				/*
+				if (controlEncendido) {
+					if (KeyEvent.VK_UP == e.getKeyCode()) {
+						movement.movimiento("AVANZAR");
+					}
+					if (KeyEvent.VK_DOWN == e.getKeyCode()) {
+						movement.movimiento("RETROCEDER");
+					}
+					if (KeyEvent.VK_RIGHT == e.getKeyCode()) {
+						movement.movimiento("DERECHA");
+					}
+					if (KeyEvent.VK_LEFT == e.getKeyCode()) {
+						movement.movimiento("IZQUIERDA");
+					}
+
+				}*/
 
 			}
 		};

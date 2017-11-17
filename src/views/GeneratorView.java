@@ -30,22 +30,7 @@ public class GeneratorView extends JFrame {
 	private JButton btnEditarUbicacion;
 	private JButton btnEjecutar;
 	private JScrollPane scrollPane;
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GeneratorView frame = new GeneratorView();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
