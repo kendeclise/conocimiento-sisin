@@ -48,7 +48,7 @@ public class MainController {
 	private void configView() {
 
 		// Variados
-		mainView.setTitle("Planificaci�n de rutas");
+		mainView.setTitle("Planificación de rutas");
 		mainView.getBtnEncender().setToolTipText("Encender la aplicación");
 		mainView.getBtnApagar().setToolTipText("Apagar la aplicación");
 		mainView.getContentPane().setFocusable(true);
@@ -233,7 +233,7 @@ public class MainController {
 	                        pw.close();
 	                        fw.close();
 	                        
-	                        //Mensaje de �xito
+	                        //Mensaje de éxito
 	                        JOptionPane.showMessageDialog(mainView, "Se guardó el script correctamente en la ubicación: \""+flc.getSelectedFile()+"\"",
 	                				"éxito al guardar archivo", JOptionPane.DEFAULT_OPTION);
 	                        
@@ -346,7 +346,7 @@ public class MainController {
 		};
 	}
 	
-	//M�todo para cambiar el tama�o de una imagen
+	//Método para cambiar el tamaño de una imagen
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();  
 	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  

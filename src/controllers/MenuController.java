@@ -55,7 +55,7 @@ public class MenuController {
 
 	private void configView() {
 
-		menuView.setTitle("Men� de opciones");
+		menuView.setTitle("Menú de opciones");
 
 		// Elementos del comboPuerto
 		menuView.getCmbPuerto().addItem("6101");
