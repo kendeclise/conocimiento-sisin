@@ -48,9 +48,9 @@ public class MainController {
 	private void configView() {
 
 		// Variados
-		mainView.setTitle("Planificación de rutas");
-		mainView.getBtnEncender().setToolTipText("Encender la aplicación");
-		mainView.getBtnApagar().setToolTipText("Apagar la aplicación");
+		mainView.setTitle("Planificaciï¿½n de rutas");
+		mainView.getBtnEncender().setToolTipText("Encender la aplicaciÃ³n");
+		mainView.getBtnApagar().setToolTipText("Apagar la aplicaciÃ³n");
 		mainView.getContentPane().setFocusable(true);
 
 		mainView.getLblServidor().setText(servidor);
@@ -180,7 +180,7 @@ public class MainController {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.err.println("[APLICACIÓN ENCENDIDA]");
+				System.err.println("[APLICACIÃ“N ENCENDIDA]");
 				// Instancio el modelo
 				if (movement == null) {
 					movement = new Movement(servidor, puerto);
@@ -233,15 +233,15 @@ public class MainController {
 	                        pw.close();
 	                        fw.close();
 	                        
-	                        //Mensaje de éxito
-	                        JOptionPane.showMessageDialog(mainView, "Se guardo el script correctamente en la ubicación: \""+flc.getSelectedFile()+"\"",
-	                				"Éxito al guardar archivo", JOptionPane.DEFAULT_OPTION);
+	                        //Mensaje de ï¿½xito
+	                        JOptionPane.showMessageDialog(mainView, "Se guardÃ³ el script correctamente en la ubicaciÃ³n: \""+flc.getSelectedFile()+"\"",
+	                				"Ã©xito al guardar archivo", JOptionPane.DEFAULT_OPTION);
 	                        
 	                    } catch (Exception ex) {
 	                        ex.printStackTrace();
 	                    }
 	                    
-	                    System.err.println("[APLICACIÓN APAGADA]");
+	                    System.err.println("[APLICACIÃ“N APAGADA]");
 	                    movement.apagar();
 	                    movement = null;
 						mainView.desactivar();			
@@ -254,7 +254,7 @@ public class MainController {
 	               
 	                
 				}else {
-					System.err.println("[APLICACIÓN APAGADA]");
+					System.err.println("[APLICACIÃ“N APAGADA]");
 					movement.apagar();
 					movement = null;
 					mainView.desactivar();			
@@ -285,7 +285,7 @@ public class MainController {
 				mainView.setVisible(false);
 				mainView = null;
 				
-				//Invocando el controlador de Menú
+				//Invocando el controlador de MenÃº
 				new MenuController(servidor,puerto);
 			}
 		};
@@ -346,7 +346,7 @@ public class MainController {
 		};
 	}
 	
-	//Método para cambiar el tamaño de una imagen
+	//Mï¿½todo para cambiar el tamaï¿½o de una imagen
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();  
 	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  

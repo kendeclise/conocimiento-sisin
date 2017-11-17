@@ -55,7 +55,7 @@ public class MenuController {
 
 	private void configView() {
 
-		menuView.setTitle("Menú de opciones");
+		menuView.setTitle("Menï¿½ de opciones");
 
 		// Elementos del comboPuerto
 		menuView.getCmbPuerto().addItem("6101");
@@ -85,8 +85,8 @@ public class MenuController {
 				servidor = menuView.getTxtServidor().getText();
 				puerto = Integer.parseInt(menuView.getCmbPuerto().getSelectedItem().toString());
 				if (servidor.isEmpty()) {
-					JOptionPane.showMessageDialog(menuView, "El campo dirección del servidor no puede estar vacío.",
-							"Error de validación", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(menuView, "El campo direcciÃ³n del servidor no puede estar vacÃ­o.",
+							"Error de validaciÃ³n", JOptionPane.ERROR_MESSAGE);
 				} else {					
 					menuView.setVisible(false);
 					menuView = null;
@@ -106,8 +106,8 @@ public class MenuController {
 				puerto = Integer.parseInt(menuView.getCmbPuerto().getSelectedItem().toString());
 
 				if (servidor.isEmpty()) {
-					JOptionPane.showMessageDialog(menuView, "El campo dirección del servidor no puede estar vacío.",
-							"Error de validación", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(menuView, "El campo direcciÃ³n del servidor no puede estar vacÃ­o.",
+							"Error de validaciÃ³n", JOptionPane.ERROR_MESSAGE);
 				} else {
 					menuView.setVisible(false);
 					menuView = null;

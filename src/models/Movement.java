@@ -128,7 +128,7 @@ public class Movement {
 
 	public void movimiento(String accion) {
 		double speed = 0, turnrate = 0;
-		System.out.println("ACCIÓN: " + accion);
+		System.out.println("ACCIÃ“N: " + accion);
 
 		if ("IZQUIERDA".equals(accion)) {
 			speed = 0f;
@@ -213,8 +213,8 @@ public class Movement {
 		} catch (Exception e) {
 		}
         
-        JOptionPane.showMessageDialog(vistaGenerator, "Se ejecutó correctamente el script de movimiento de rutas.",
-				"Éxito", JOptionPane.DEFAULT_OPTION);
+        JOptionPane.showMessageDialog(vistaGenerator, "Se ejecutÃ³ correctamente el script de movimiento de rutas.",
+				"ï¿½xito", JOptionPane.DEFAULT_OPTION);
 		
 	}
 
