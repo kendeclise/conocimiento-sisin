@@ -62,12 +62,13 @@ public class Movement {
 			posi = robot.requestInterfacePosition2D(0, PlayerConstants.PLAYER_OPEN_MODE);
 			ranger = robot.requestInterfaceRanger(indexRadar, PlayerConstants.PLAYER_OPEN_MODE);
 			
-			PlayerPose2d position = new PlayerPose2d(6, 6, 5000);		
+			/*
+			PlayerPose2d position = new PlayerPose2d(6, 6, 1);		
 			PlayerPosition2dCmdPos pst = new PlayerPosition2dCmdPos();
 			pst.setPos(position);
 			pst.setVel(position);
 			posi.setPosition(pst);
-			
+			*/
 			
 			
 			ranger.setRangerPower(1);
