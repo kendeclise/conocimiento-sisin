@@ -64,8 +64,8 @@ public class MenuController {
 		menuView.getCmbPuerto().addItem("6104");
 		menuView.getCmbPuerto().addItem("6665");
 
-		menuView.getTxtServidor().setText("192.168.1.37");
-		menuView.getCmbPuerto().setSelectedIndex(4);
+		menuView.getTxtServidor().setText("192.168.1.33");
+		menuView.getCmbPuerto().setSelectedIndex(0);
 		
 		// Asignando actionListener a los botones
 		menuView.getBtnEjecutarRuta().addActionListener(accionBtnEjecutarRuta());

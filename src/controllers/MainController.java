@@ -234,7 +234,7 @@ public class MainController {
 	                        fw.close();
 	                        
 	                        //Mensaje de éxito
-	                        JOptionPane.showMessageDialog(mainView, "Se guardó el script correctamente en la ubicación: \""+flc.getSelectedFile()+"\"",
+	                        JOptionPane.showMessageDialog(mainView, "Se guardó el script correctamente en la ubicación: \""+flc.getSelectedFile()+extension+"\"",
 	                				"éxito al guardar archivo", JOptionPane.DEFAULT_OPTION);
 	                        
 	                    } catch (Exception ex) {

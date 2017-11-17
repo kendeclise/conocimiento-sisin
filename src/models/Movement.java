@@ -42,7 +42,7 @@ public class Movement {
 	public Movement(String servidor, int puerto) {
 		this.servidor = servidor;
 		this.puerto = puerto;
-		database.add("Speed;TurnRate");
+		database.add("Speed;TurnRate;coordX;coordY;Yaw");
 		
 	}
 
@@ -69,7 +69,6 @@ public class Movement {
 			pst.setVel(position);
 			posi.setPosition(pst);
 			*/
-			
 			
 			ranger.setRangerPower(1);
 			posi.setMotorPower(1);
@@ -152,7 +151,7 @@ public class Movement {
 		posi.setSpeed(speed, turnrate);
 
 		try {
-			Thread.sleep(300);
+			Thread.sleep(50);
 		} catch (Exception e) {
 		}
 
@@ -160,7 +159,7 @@ public class Movement {
 		
 		System.out.println("Velocidad= " + speed + ", Giro= " + turnrate);
 		//Almacenando en una variable base de datos
-		database.add(speed+";"+turnrate);
+		database.add(speed+";"+turnrate+";"+posi.getX()+";"+posi.getY()+";"+posi.getYaw());
 
 		if (ranger.isDataReady()) {
 			// System.err.println(decodeLaserData(ranger));
@@ -193,7 +192,7 @@ public class Movement {
         		vistaGenerator.getTxtConsola().append("\n\t    "+  speedString+"\t\t|\t      "+turnRateString);
 
         		try {
-        			Thread.sleep(300);
+        			Thread.sleep(50);
         		} catch (Exception e) {
         		}
 
@@ -209,12 +208,69 @@ public class Movement {
         apagar();
         
         try {
+			Thread.sleep(500);
+		} catch (Exception e) {
+		}
+        
+        JOptionPane.showMessageDialog(vistaGenerator, "Se ejecutó correctamente el script de movimiento de rutas.",
+				"éxito", JOptionPane.DEFAULT_OPTION);
+		
+	}
+	
+	public void movimientoByCoordenadasPorFichero(String urlFichero, GeneratorView vistaGenerator) throws IOException, NumberFormatException {
+		File archivo = new File (urlFichero);
+		FileReader fr = new FileReader (archivo);
+		BufferedReader br = new BufferedReader(fr);
+		
+		// Lectura del fichero
+        String linea;
+        int cont = 0;
+        encender();
+        while((linea=br.readLine())!=null) {
+        	if(cont != 0) {
+        		//System.out.println(linea);
+        		String[] datos = linea.split(";");        		
+        		double speed = Double.parseDouble(datos[0]); 
+        	    double turnrate = Double.parseDouble(datos[1]);
+        	    double x = Double.parseDouble(datos[2]);
+        	    double y = Double.parseDouble(datos[3]);
+        	    double yaw = Double.parseDouble(datos[4]);
+        	    
+        		//System.out.println(speed+" - "+turnrate);
+        	    
+        	    String speedString = (speed>=0.0) ? " "+speed : ""+speed;
+        	    String turnRateString = (turnrate>=0.0) ? " "+turnrate : ""+turnrate;
+        	    
+        	    vistaGenerator.getTxtConsola().append("\n\t    "+  speedString+"\t\t|\t      "+turnRateString);
+        	            		
+        		//Efectuando el movimiento        		
+        	    PlayerPose2d position = new PlayerPose2d(x, y, yaw);		
+    			PlayerPosition2dCmdPos pst = new PlayerPosition2dCmdPos();
+    			pst.setPos(position);
+    			pst.setVel(position);
+    			posi.setPosition(pst);
+    			
+    			try {
+    				Thread.sleep(100);
+    			} catch (Exception e) {
+    			}
+    	        
+        	}        	
+        	cont++;
+        }
+        
+        //Cerrando el archivo
+        br.close();
+        fr.close();
+        apagar();
+        
+        try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 		}
         
         JOptionPane.showMessageDialog(vistaGenerator, "Se ejecutó correctamente el script de movimiento de rutas.",
-				"�xito", JOptionPane.DEFAULT_OPTION);
+				"éxito", JOptionPane.DEFAULT_OPTION);
 		
 	}
 

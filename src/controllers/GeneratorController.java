@@ -105,7 +105,8 @@ public class GeneratorController {
 							"Error con el archivo", JOptionPane.ERROR_MESSAGE);
 				}else {
 					try {
-						new Movement(servidor, puerto).movimientoPorFichero(filepath, generatorView);
+						//new Movement(servidor, puerto).movimientoPorFichero(filepath, generatorView);
+						new Movement(servidor, puerto).movimientoByCoordenadasPorFichero(filepath, generatorView);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
