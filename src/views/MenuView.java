@@ -14,6 +14,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MenuView extends JFrame {
 
@@ -25,6 +27,7 @@ public class MenuView extends JFrame {
 	private JLabel lblPuerto;
 	private JTextField txtServidor;
 	private JComboBox cmbPuerto;
+	private JButton btnT3;
 	
 
 
@@ -34,7 +37,7 @@ public class MenuView extends JFrame {
 	public MenuView() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 295, 360);
+		setBounds(100, 100, 295, 379);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -84,6 +87,11 @@ public class MenuView extends JFrame {
 		cmbPuerto = new JComboBox();
 		cmbPuerto.setBounds(90, 49, 107, 20);
 		panel_1.add(cmbPuerto);
+		
+		btnT3 = new JButton("T3 RUTAS");	
+		btnT3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnT3.setBounds(41, 293, 201, 33);
+		contentPane.add(btnT3);
 	}
 
 	public JPanel getContentPane() {
@@ -105,8 +113,10 @@ public class MenuView extends JFrame {
 	public JComboBox getCmbPuerto() {
 		return cmbPuerto;
 	}
-	
-	
+
+	public JButton getBtnT3() {
+		return btnT3;
+	}
 	
 	
 }

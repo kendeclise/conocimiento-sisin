@@ -3,12 +3,15 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.List;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import models.Archivos;
+import models.Data;
 import models.Movement;
 import views.GeneratorView;
 
@@ -107,6 +110,8 @@ public class GeneratorController {
 					try {
 						//new Movement(servidor, puerto).movimientoPorFichero(filepath, generatorView);
 						new Movement(servidor, puerto).movimientoByCoordenadasPorFichero(filepath, generatorView);
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

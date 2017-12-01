@@ -216,6 +216,7 @@ public class Movement {
 				"éxito", JOptionPane.DEFAULT_OPTION);
 		
 	}
+
 	
 	public void movimientoByCoordenadasPorFichero(String urlFichero, GeneratorView vistaGenerator) throws IOException, NumberFormatException {
 		File archivo = new File (urlFichero);
@@ -271,6 +272,51 @@ public class Movement {
         
         JOptionPane.showMessageDialog(vistaGenerator, "Se ejecutó correctamente el script de movimiento de rutas.",
 				"éxito", JOptionPane.DEFAULT_OPTION);
+		
+	}
+	
+	public void movimientoByCoordenadasPorLista(List<Data> almacen) throws IOException, NumberFormatException {
+
+		// Lectura del fichero
+        
+        encender();
+        for(Data d : almacen) {
+        	
+        		//System.out.println(linea);
+        		      		
+        		double speed = d.getSpeed();
+        	    double turnrate = d.getTurnspeed();
+        	    double x = d.getX();
+        	    double y = d.getY();
+        	    double yaw = d.getYaw();
+        	    
+        	    String speedString = (speed>=0.0) ? " "+speed : ""+speed;
+        	    String turnRateString = (turnrate>=0.0) ? " "+turnrate : ""+turnrate;
+        	     		
+        		//Efectuando el movimiento        		
+        	    PlayerPose2d position = new PlayerPose2d(x, y, yaw);		
+    			PlayerPosition2dCmdPos pst = new PlayerPosition2dCmdPos();
+    			pst.setPos(position);
+    			pst.setVel(position);
+    			posi.setPosition(pst);
+    			
+    			try {
+    				Thread.sleep(100);
+    			} catch (Exception e) {
+    			}
+    	        
+        	
+        }
+        
+        
+        apagar();
+        
+        try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+		}
+        
+       
 		
 	}
 

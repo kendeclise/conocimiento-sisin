@@ -70,6 +70,7 @@ public class MenuController {
 		// Asignando actionListener a los botones
 		menuView.getBtnEjecutarRuta().addActionListener(accionBtnEjecutarRuta());
 		menuView.getBtnPlanificarRuta().addActionListener(accionBtnPlanificarRuta());
+		menuView.getBtnT3().addActionListener(accionBtnT3());
 
 		menuView.setLocationRelativeTo(null);
 		menuView.setVisible(true);
@@ -115,6 +116,20 @@ public class MenuController {
 					new GeneratorController(servidor, puerto);
 				}
 
+			}
+		};
+	}
+	
+	private ActionListener accionBtnT3() {
+		return new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				menuView.setVisible(false);
+				menuView = null;
+				//Instanciando el controlador Generator
+				new EscondidasController(servidor);
+				
 			}
 		};
 	}
